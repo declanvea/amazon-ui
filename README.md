@@ -1,3 +1,10 @@
+## Overview of this project
+This project is an implementation of the tutorial created by Unsure Programmer from YouTube. I am looking to continue building my react native skillset and am excited to add my own taste to this project.
+
+
+
+
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
