@@ -3,11 +3,14 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
-import { Container, Content, Left, Right, Icon, Header, Item, Input } from 'native-base';
+import { Container, Content, Left, Right, Icon, Header, Item, Input, Card, CardItem } from 'native-base';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
+import Swiper from 'react-native-swiper';
+import RecommendedCardItem from '../components/RecommendedCardItem';
 
 export default class HomeScreen extends React.Component {
   render() {
@@ -29,6 +32,7 @@ export default class HomeScreen extends React.Component {
                 <Text style={{ fontWeight: 'bold'}} >Category</Text>
               </View>
             </TouchableOpacity>
+
             <View style={{ flex: 1, height: '100%', marginLeft: 5, justifyContent: 'center' }} >
               <Item style={{ backgroundColor: '#ffffff', paddingHorizontal: 10, borderRadius: 4 }} >
                 <Icon name='search' style={{ fontSize: 20, paddingTop: 5 }} />
@@ -36,6 +40,74 @@ export default class HomeScreen extends React.Component {
               </Item>
             </View>
           </View>
+
+          <Content style={{ backgroundColor: '#d5d5d6', marginTop: 70 }} >
+            <View style={{ height: 50, backgroundColor: 'white', flexDirection: 'row', paddingHorizontal: 5, alignItems: 'center', justifyContent: 'space-between' }} >
+              <Text>Hello, Declan</Text>
+              <View style={{ flexDirection: 'row' }} >
+                <Text>Your Account </Text>
+                <Icon name="arrow-forward" style={{ fontSize:18 }} />
+              </View>
+            </View>
+            
+            <Swiper autoplay={ true } style={{ height: 100 }} >
+              <View style={{ flex:1 }}>
+                <Image 
+                  style={{ flex: 1, height: null, width: null, resizeMode: 'contain' }}
+                  source={ require('../assets/tm.jpg') }
+                />
+              </View>
+              <View style={{ flex:1 }}>
+                <Image 
+                  style={{ flex: 1, height: null, width: null, resizeMode: 'contain' }}
+                  source={ require('../assets/golfcourse.png') }
+                />
+              </View>
+              <View style={{ flex:1 }}>
+                <Image 
+                  style={{ flex: 1, height: null, width: null, resizeMode: 'contain' }}
+                  source={ require('../assets/amazon.png') }
+                />
+              </View>
+            </Swiper>
+            <Card>
+              <CardItem header>
+                <Text>Your Receommendations</Text>
+              </CardItem>
+              <RecommendedCardItem
+                itemName='M4 Driver'
+                itemCreator='TaylorMade'
+                itemPrice='$429.99'
+                savings='50'
+                imageUri={require('../assets/m4.jpg')}
+                rating={5}
+              />
+              <RecommendedCardItem
+                itemName='TP Black Copper Collection Juno'
+                itemCreator='TaylorMade'
+                itemPrice='$219.99'
+                savings='39.99'
+                imageUri={require('../assets/juno.jpg')}
+                rating={4}
+              />
+              <RecommendedCardItem
+                itemName='Stratus Tech Glove'
+                itemCreator='TaylorMade'
+                itemPrice='$11.99'
+                savings='7.99'
+                imageUri={require('../assets/glove.jpg')}
+                rating={3}
+              />
+              <RecommendedCardItem
+                itemName='MyNumber TP5X'
+                itemCreator='TaylorMade'
+                itemPrice='$46.99'
+                savings='10.99'
+                imageUri={require('../assets/TP5x.jpg')}
+                rating={5}
+              />
+            </Card>
+          </Content>
       </Container>
     );
   }
