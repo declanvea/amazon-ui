@@ -18,9 +18,9 @@ export default class HomeScreen extends React.Component {
       <Container>
           <Header style={{ backgroundColor: '#3a455c', height: 90, borderBottomColor: '#757575' }}>
               <Left style={{ flexDirection: 'row' }} >
-                  <Icon name='md-menu' style={{ color: '#ffffff', marginRight: 15 }} />
+                  <Icon onPress={()=>this.props.navigation.navigate('DrawerOpen')} name='md-menu' style={{ color: '#ffffff', marginRight: 15 }} />
                   <FAIcon name='amazon' style={{ fontSize: 32, color: '#ffffff' }}/>
-              </Left>
+              </Left> 
               <Right>
                 <Icon name="md-cart" style={{ color: '#ffffff' }} />
               </Right>
